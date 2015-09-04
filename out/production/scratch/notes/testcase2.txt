@@ -1,0 +1,25 @@
+loops
+2
+0 2 10
+5 3 5
+2 6 14 30 62 126 254 510 1022 2046
+8 14 26 50 98
+
+1
+0 2 10
+2 6 14 30 62 126 254 510 1022 2046
+
+// standard in/out 2
+42
+3.1415
+Welcome to Hackerrank Java tutorials!
+
+test case
+2147483647
+235345345345.234534
+  fsdfsdf   sdf
+
+output
+String:   fsdfsdf   sdf
+Double: 2.3534534534523453E11
+Int: 2147483647
