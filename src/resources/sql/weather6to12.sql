@@ -17,3 +17,7 @@ select distinct(city) from station where REGEXP_LIKE (lower(city), '^.*[^aeiou]$
 select distinct(city) from station
 where (REGEXP_LIKE (lower(city), '^[^aeiou].*$') OR REGEXP_LIKE (lower(city), '^.*[^aeiou]$'))
 order by city;
+
+-- #12
+select distinct(city) from station where REGEXP_LIKE (lower(city), '^[^aeiou].*[^aeiou]$') order by city;
+
