@@ -1,6 +1,9 @@
 package funk.shane.hackerrank.java;
 
-import java.util.*;
+import java.math.BigDecimal;
+import java.util.Arrays;
+import java.util.Comparator;
+import java.util.Scanner;
 
 /**
  * Created by Shane on 9/13/2015.
@@ -16,15 +19,22 @@ public class BigDec {
             s[i] = sc.next();
         }
 
-        Set<String> set = new TreeSet<>(Collections.reverseOrder());
-        set.addAll(Arrays.asList(s));
-
-        s = set.toArray(new String[n]);
+        Arrays.sort(s, new StringComp());
 
         //Output
         for(int i = 0; i < n; i++)
         {
             System.out.println(s[i]);
+        }
+    }
+
+    private static class StringComp implements Comparator<String> {
+        @Override
+        public int compare(String str1, String str2) {
+            final BigDecimal bd1 = new BigDecimal(str1);
+            final BigDecimal bd2 = new BigDecimal(str2);
+
+            return bd2.compareTo(bd1);
         }
     }
 }
