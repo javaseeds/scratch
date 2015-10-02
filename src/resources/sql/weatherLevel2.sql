@@ -4,6 +4,10 @@ from
   (select sum(LAT_N) sigma from station) lat_n,
   (select sum(LONG_W) sigma from station) long_w;
 
+-- Weather Observation Station 13
+select round(sum(lat_n), 4) from station
+where LAT_N > 38.7780 and LAT_N < 137.2345;
+
 -- weather observation station 14
 select round(max(LAT_N), 4) from station
 where LAT_N < 137.2345;
@@ -21,6 +25,13 @@ where LAT_N > 38.7780;
 select round(LONG_W, 4) from station
 where lat_n =
   (select min(LAT_N) from station where LAT_N > 38.7780);
+
+-- Weather Observation Station 20
+select round((adder.s / cnt.x), 4) from
+(select sum(lat_n) s from station where lat_n is not null) adder,
+(select count(lat_n) x from station where lat_n is not null) cnt;
+
+
 
 -- weather observation station 17
 -- Consider P1(a, b) and P2(c, d) be two points on 2D plane, where (a, b) be minimum
