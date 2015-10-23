@@ -1,11 +1,11 @@
-package funk.shane.domain;
+package funk.shane.lambdas;
 
 import java.util.function.Function;
 
 /**
  * Created by Shane on 5/30/2015.
  */
-public class FunWithLambdas {
+public class FunctionLambda {
     public static void main(String[] args) {
         String greeting = "Hello ";
         Function<String, String> greeter = whom -> greeting + whom + "!";
