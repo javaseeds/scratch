@@ -25,6 +25,6 @@ public class FunWithCollections1 {
     }
 
     private static void display(final List<Person> persons) {
-        persons.forEach((x) -> System.out.println(x));
+        persons.forEach(System.out::println);
     }
 }
