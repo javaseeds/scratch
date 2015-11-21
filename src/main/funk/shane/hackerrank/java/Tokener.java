@@ -1,6 +1,5 @@
 package funk.shane.hackerrank.java;
 
-import java.io.File;
 import java.util.Scanner;
 
 /**
