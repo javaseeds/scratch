@@ -14,7 +14,7 @@ public class LoveLetterMystery {
             String str = sc.nextLine();
             while(!isPalindrome(str)) {
                 final char[] charArr = str.toCharArray();
-                char ch = charArr[str.length() - 1];
+
 
                 str = Arrays.toString(charArr);
             }
