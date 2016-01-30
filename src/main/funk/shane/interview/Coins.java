@@ -1,7 +1,9 @@
 package funk.shane.interview;
 
 /**
- * Created by Shane on 1/26/2016.
+ * Find minimum number of coins that make a given value
+ * Given a value V, if we want to make change for V cents, and we have infinite supply of each of C = { C1, C2, .. , Cm} valued coins,
+ * what is the minimum number of coins to make the change?
  */
 public class Coins {
     private static final int[] coinFaces = new int[] {100, 50, 25, 10, 5, 1};
