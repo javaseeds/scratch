@@ -1,7 +1,5 @@
 package funk.shane.interview;
 
-import java.util.Stack;
-
 /**
  * http://www.geeksforgeeks.org/reverse-an-array-without-affecting-special-characters/
  * Input:   str = "a,b$c"
@@ -15,33 +13,42 @@ import java.util.Stack;
 public class ReverseString1 {
     public ReverseString1() {    }
 
-    /* Note: this implementation approaches N^2 - not good first try */
-    public String reverseMe(final char[] origStr) {
-        final char[] reverse = new char[origStr.length];
-        final Stack<Character> stack = new Stack<>();
+    /* this implementation is better, although kinda hairy - array access is outward in nearing O(n) */
+    public String reverseMe(final String origStr) {
+        final char[] origStrArr = origStr.toCharArray();
+        int i = 0, j = origStrArr.length - 1; // j includes offset
+        char left;
+        char right;
 
-        for(int i = 0; i < origStr.length; i++) {
-            if(Character.isAlphabetic(origStr[i])) {
-                stack.push(origStr[i]);
-                reverse[i] = ' ';
+        while(i <= j) {
+            if(Character.isAlphabetic(origStrArr[i])) {
+                left = origStrArr[i];
             }
             else {
-                reverse[i] = origStr[i];
+                i++;
+                continue;
             }
+
+            if(Character.isAlphabetic(origStrArr[j])) {
+                right = origStrArr[j];
+            }
+            else {
+                j--;
+                continue;
+            }
+
+            // swap places where appropiate and increment/decrement
+            origStrArr[i] = right;
+            origStrArr[j] = left;
+            i++; j--;
         }
 
-        for(int i = 0; i < reverse.length; i++) {
-            if(Character.isWhitespace(reverse[i])) {
-                reverse[i] = stack.pop();
-            }
-        }
-
-        return new String(reverse);
+        return new String(origStrArr);
     }
 
     public static void main(String[] args) {
         final String str1 = "Ab,c,de!$";
         ReverseString1 rs1 = new ReverseString1();
-        System.out.printf("str1 '%s' with only chars reversed '%s'%n", str1, rs1.reverseMe(str1.toCharArray()));
+        System.out.printf("Reverse without special char %n%s%n%s%n", str1, rs1.reverseMe(str1));
     }
 }
