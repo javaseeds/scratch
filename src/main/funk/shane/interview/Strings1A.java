@@ -35,9 +35,13 @@ public class Strings1A {
             char ch1 = s1.charAt(0);
             for(int i = 0; i < s2.length(); i++) {
                 if(ch1 == s2.charAt(i)) {
-                    String tmp = s2.substring(i, i + s1.length());
-                    if(s1.equals(tmp)) {
-                        return i;
+                    try {
+                        String tmp = s2.substring(i, i + s1.length());
+                        if(s1.equals(tmp)) {
+                            return i;
+                        }
+                    } catch (StringIndexOutOfBoundsException e) {
+                        return -1;
                     }
                 }
                 index = -1;
