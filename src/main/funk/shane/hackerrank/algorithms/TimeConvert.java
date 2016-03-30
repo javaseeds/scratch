@@ -4,6 +4,7 @@ import java.util.Scanner;
 
 /**
  * Created by Shane on 8/29/2015.
+ * https://www.hackerrank.com/challenges/time-conversion
  */
 public class TimeConvert {
 

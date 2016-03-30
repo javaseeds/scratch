@@ -12,7 +12,9 @@ public class PropTest {
     public static void main(String[] args) {
         Properties p = System.getProperties();
 
-        TreeSet set = new TreeSet(p.keySet());
+        TreeSet<Object> set = new TreeSet<>();
+        set.addAll(p.keySet());
+
         Iterator setIt = set.iterator();
         while(setIt.hasNext()) {
             final String key = (String)setIt.next();
