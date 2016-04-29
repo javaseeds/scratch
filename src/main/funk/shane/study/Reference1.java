@@ -1,9 +1,9 @@
 package funk.shane.study;
 
 /**
- * Created by Shane on 3/29/2016.
+ * Created by Shane
  */
-public class Reference {
+public class Reference1 {
     public static void main(String[] args) {
         Node n1 = new Node(1, "one");
         System.out.printf("n1: %s%n", n1);

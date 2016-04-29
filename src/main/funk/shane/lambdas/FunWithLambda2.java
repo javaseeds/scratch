@@ -10,13 +10,12 @@ import java.util.function.Function;
 
 public class FunWithLambda2 {
 
-    public static boolean isGreaterThan3(int number) {
-        return number > 3;
-    }
-
-    public static boolean isOdd(int number) {
-        return number % 2 == 1;
-    }
+//    public static boolean isGreaterThan3(int number) {
+//        return number > 3;
+//    }
+//    public static boolean isOdd(int number) {
+//        return number % 2 == 1;
+//    }
 
     public static void main(String[] args) {
         List<Integer> domain = Lists.newArrayList(5, 2, 4, 3, 1, 7);
